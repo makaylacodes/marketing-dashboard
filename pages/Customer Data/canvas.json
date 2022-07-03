@@ -146,7 +146,7 @@
               "borderRadius": "0.375rem"
             },
             {
-              "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+              "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
               "widgetName": "Container2",
               "borderColor": "transparent",
               "isCanvas": true,
@@ -166,14 +166,7 @@
               "parentColumnSpace": 13.78125,
               "dynamicTriggerPathList": [],
               "leftColumn": 13,
-              "dynamicBindingPathList": [
-                {
-                  "key": "borderRadius"
-                },
-                {
-                  "key": "boxShadow"
-                }
-              ],
+              "dynamicBindingPathList": [],
               "children": [
                 {
                   "boxShadow": "none",
@@ -234,10 +227,12 @@
                     },
                     {
                       "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                      "onSort": "{{findQuery.run()}}",
                       "isVisibleDownload": true,
                       "iconSVG": "/static/media/icon.db8a9cbd.svg",
                       "topRow": 12,
                       "isSortable": true,
+                      "onPageChange": "{{findQuery.run()}}",
                       "type": "TABLE_WIDGET",
                       "animateLoading": true,
                       "dynamicBindingPathList": [
@@ -298,9 +293,9 @@
                         "step": 62,
                         "status": 75,
                         "customColumn1": 106,
-                        "CustomerID": 161,
-                        "CustomerName": 188,
-                        "CustomersEmailID": 215
+                        "CustomerID": 182,
+                        "CustomerName": 208,
+                        "CustomersEmailID": 239
                       },
                       "widgetName": "dataTable",
                       "defaultPageSize": 0,
@@ -325,6 +320,12 @@
                       "dynamicTriggerPathList": [
                         {
                           "key": "primaryColumns.customColumn1.onClick"
+                        },
+                        {
+                          "key": "onPageChange"
+                        },
+                        {
+                          "key": "onSort"
                         }
                       ],
                       "primaryColumns": {
@@ -485,8 +486,13 @@
                     },
                     {
                       "boxShadow": "none",
-                      "widgetName": "Select1",
+                      "widgetName": "keySelect",
                       "isFilterable": true,
+                      "dynamicPropertyPathList": [
+                        {
+                          "key": "isVisible"
+                        }
+                      ],
                       "displayName": "Select",
                       "iconSVG": "/static/media/icon.bd99caba.svg",
                       "labelText": "",
@@ -500,10 +506,14 @@
                       "type": "SELECT_WIDGET",
                       "serverSideFiltering": false,
                       "hideCard": false,
-                      "defaultOptionValue": "GREEN",
+                      "defaultOptionValue": "CustomerID",
                       "animateLoading": true,
                       "parentColumnSpace": 11.96142578125,
-                      "dynamicTriggerPathList": [],
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onOptionChange"
+                        }
+                      ],
                       "leftColumn": 22,
                       "dynamicBindingPathList": [
                         {
@@ -511,23 +521,13 @@
                         },
                         {
                           "key": "borderRadius"
+                        },
+                        {
+                          "key": "isVisible"
                         }
                       ],
                       "labelPosition": "Left",
-                      "options": [
-                        {
-                          "label": "Blue",
-                          "value": "BLUE"
-                        },
-                        {
-                          "label": "Green",
-                          "value": "GREEN"
-                        },
-                        {
-                          "label": "Red",
-                          "value": "RED"
-                        }
-                      ],
+                      "options": "[\n  {\n    \"label\": \"UsersDoNotDisturb\",\n    \"value\": \"UsersDoNotDisturb\"\n  },\n  {\n    \"label\": \"CustomerEmailID\",\n    \"value\": \"CustomerEmailID\"\n  },\n   {\n    \"label\": \"CustomerName\",\n    \"value\": \"CustomerName\"\n  }, {\n    \"label\": \"CustomerID\",\n    \"value\": \"CustomerID\"\n  }\n]",
                       "placeholderText": "Select option",
                       "isDisabled": false,
                       "key": "je8xjdyrpt",
@@ -537,18 +537,24 @@
                       "rightColumn": 42,
                       "widgetId": "hup60rtrxt",
                       "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-                      "isVisible": true,
+                      "isVisible": "{{findQuery.data.length > 0}}",
                       "version": 1,
                       "parentId": "lt8mc5sodu",
                       "labelAlignment": "left",
                       "renderMode": "CANVAS",
                       "isLoading": false,
-                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                      "onOptionChange": "{{findQuery.run()}}"
                     },
                     {
                       "boxShadow": "none",
-                      "widgetName": "Select2",
+                      "widgetName": "orderSelect",
                       "isFilterable": true,
+                      "dynamicPropertyPathList": [
+                        {
+                          "key": "isVisible"
+                        }
+                      ],
                       "displayName": "Select",
                       "iconSVG": "/static/media/icon.bd99caba.svg",
                       "labelText": "",
@@ -562,10 +568,14 @@
                       "type": "SELECT_WIDGET",
                       "serverSideFiltering": false,
                       "hideCard": false,
-                      "defaultOptionValue": "GREEN",
+                      "defaultOptionValue": "1",
                       "animateLoading": true,
                       "parentColumnSpace": 13.78125,
-                      "dynamicTriggerPathList": [],
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onOptionChange"
+                        }
+                      ],
                       "leftColumn": 42,
                       "dynamicBindingPathList": [
                         {
@@ -573,23 +583,13 @@
                         },
                         {
                           "key": "borderRadius"
+                        },
+                        {
+                          "key": "isVisible"
                         }
                       ],
                       "labelPosition": "Left",
-                      "options": [
-                        {
-                          "label": "Blue",
-                          "value": "BLUE"
-                        },
-                        {
-                          "label": "Green",
-                          "value": "GREEN"
-                        },
-                        {
-                          "label": "Red",
-                          "value": "RED"
-                        }
-                      ],
+                      "options": "[\n  {\n    \"label\": \"ASC\",\n    \"value\": \"1\"\n  },\n  {\n    \"label\": \"DESC\",\n    \"value\": \"-1\"\n  }\n]",
                       "placeholderText": "Select option",
                       "isDisabled": false,
                       "key": "je8xjdyrpt",
@@ -599,13 +599,14 @@
                       "rightColumn": 62,
                       "widgetId": "dnjbvmwure",
                       "accentColor": "{{appsmith.theme.colors.primaryColor}}",
-                      "isVisible": true,
+                      "isVisible": "{{findQuery.data.length > 0}}",
                       "version": 1,
                       "parentId": "lt8mc5sodu",
                       "labelAlignment": "left",
                       "renderMode": "CANVAS",
                       "isLoading": false,
-                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                      "onOptionChange": "{{findQuery.run()}}"
                     },
                     {
                       "widgetName": "Text3",
@@ -667,7 +668,7 @@
               ],
               "borderWidth": "0",
               "key": "jwkklnwsss",
-              "backgroundColor": "#fee2e2",
+              "backgroundColor": "#fecaca",
               "isDeprecated": false,
               "rightColumn": 50,
               "widgetId": "wuks71emgg",
@@ -677,7 +678,7 @@
               "parentId": "0",
               "renderMode": "CANVAS",
               "isLoading": false,
-              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+              "borderRadius": "0.375rem"
             },
             {
               "boxShadow": "none",
@@ -960,7 +961,10 @@
               "name": "findQuery",
               "confirmBeforeExecute": false,
               "pluginType": "DB",
-              "jsonPathKeys": [],
+              "jsonPathKeys": [
+                "keySelect.selectedOptionValue",
+                "orderSelect.selectedOptionValue"
+              ],
               "timeoutInMillisecond": 10000
             }
           ]

@@ -62,7 +62,7 @@
             "data": ""
           },
           "sort": {
-            "data": ""
+            "data": "{ \n  {{keySelect.selectedOptionValue}} :{{orderSelect.selectedOptionValue}}\n}\n"
           },
           "limit": {
             "data": ""
@@ -78,7 +78,7 @@
         },
         "misc": {
           "formToNativeQuery": {
-            "data": "{\n  \"find\": \"customers\",\n  \"limit\": 10,\n  \"batchSize\": 10\n}\n",
+            "data": "{\n  \"find\": \"customers\",\n  \"sort\": { \n  {{keySelect.selectedOptionValue}} :{{orderSelect.selectedOptionValue}}\n}\n,\n  \"limit\": 10,\n  \"batchSize\": 10\n}\n",
             "status": "SUCCESS"
           }
         },
@@ -99,11 +99,18 @@
       }
     },
     "executeOnLoad": true,
-    "dynamicBindingPathList": [],
+    "dynamicBindingPathList": [
+      {
+        "key": "formData.find.sort.data"
+      }
+    ],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [],
+    "jsonPathKeys": [
+      "keySelect.selectedOptionValue",
+      "orderSelect.selectedOptionValue"
+    ],
     "userSetOnLoad": true,
     "confirmBeforeExecute": false,
     "policies": [],
