@@ -21,7 +21,7 @@ I followed Anaia Kubow's tutorial, but have made several changes to make it my o
 
 ##### You can visit the application using the below link
 
-###### [![](https://assets.appsmith.com/git-sync/Buttons.svg) ](https://app.appsmith.com/app/gs-postgre-crm/page1-62c060bf612750023eb089e7?branch=master)
+###### [![](https://assets.appsmith.com/git-sync/Buttons.svg) ](https://app.appsmith.com/app/marketing-dashboard/customer-data-62bb984420ae3225cef34741)
 
 <img src="https://user-images.githubusercontent.com/63388515/177248431-bf69307e-fc6d-4c2a-89e0-8d5d014e1c70.png" height=520 width=660/>
 
