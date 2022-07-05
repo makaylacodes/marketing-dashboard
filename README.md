@@ -15,7 +15,7 @@ This is API powered marketing dashboard built using a low code approach. I learn
   <li>Discord Webhook</li>
 <li>Appsmith</li></ul>
   
-I followed Anaia Kubow tutorial on building a marketing dashboard. This project is currently underconstruction and will be completed 7.8.22. 
+I followed Anaia Kubow's tutorial, but have made several changes to make it my own. This project is currently underconstruction and will be completed 7.8.22. 
 
 <img src="https://user-images.githubusercontent.com/63388515/177248431-bf69307e-fc6d-4c2a-89e0-8d5d014e1c70.png" height=520 width=660/>
 
