@@ -1,6 +1,8 @@
-# marketing-dashboard
 
-This is API powered marketing dashboard built using a low code approach. I learned how to use Appsmith to easily create many tools that startups need. The dashboard incorporates MongoDB, the SMTP API, and the Discord web hook.
+
+# Marketing Dashboard
+
+This project is an API powered marketing dashboard. It was built using Appsmith, a low code approach. I learned how to use Appsmith to easily create many tools that startups need. The dashboard incorporates MongoDB, the SMTP API, and the Discord web hook.
 
 <ul>
   <li>View all users</li>
