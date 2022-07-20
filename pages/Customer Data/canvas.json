@@ -46,7 +46,7 @@
               "animateLoading": true,
               "parentColumnSpace": 13.78125,
               "dynamicTriggerPathList": [],
-              "leftColumn": 4,
+              "leftColumn": 6,
               "dynamicBindingPathList": [
                 {
                   "key": "boxShadow"
@@ -77,28 +77,24 @@
                         "typography",
                         "paragraph"
                       ],
-                      "topRow": 1,
-                      "bottomRow": 9,
+                      "topRow": 2,
+                      "bottomRow": 8,
                       "parentRowSpace": 10,
                       "type": "TEXT_WIDGET",
                       "hideCard": false,
                       "animateLoading": true,
                       "overflow": "NONE",
-                      "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+                      "fontFamily": "Montserrat",
                       "parentColumnSpace": 11.96142578125,
                       "dynamicTriggerPathList": [],
-                      "leftColumn": 12,
-                      "dynamicBindingPathList": [
-                        {
-                          "key": "fontFamily"
-                        }
-                      ],
+                      "leftColumn": 5,
+                      "dynamicBindingPathList": [],
                       "shouldTruncate": false,
                       "truncateButtonColor": "#FFC13D",
                       "text": "Customer Communication Portal",
                       "key": "vm9iku76fw",
                       "isDeprecated": false,
-                      "rightColumn": 64,
+                      "rightColumn": 63,
                       "textAlign": "LEFT",
                       "widgetId": "zv5k419ymy",
                       "isVisible": true,
@@ -131,7 +127,7 @@
               "key": "jwkklnwsss",
               "backgroundColor": "#fecaca",
               "isDeprecated": false,
-              "rightColumn": 60,
+              "rightColumn": 58,
               "widgetId": "rtxsewfbyp",
               "containerStyle": "card",
               "isVisible": true,
@@ -143,7 +139,7 @@
             },
             {
               "boxShadow": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-              "widgetName": "Container2",
+              "widgetName": "customerData",
               "borderColor": "transparent",
               "isCanvas": true,
               "displayName": "Container",
@@ -161,7 +157,7 @@
               "animateLoading": true,
               "parentColumnSpace": 13.78125,
               "dynamicTriggerPathList": [],
-              "leftColumn": 4,
+              "leftColumn": 6,
               "dynamicBindingPathList": [],
               "children": [
                 {
@@ -169,7 +165,7 @@
                   "widgetName": "Canvas2",
                   "displayName": "Canvas",
                   "topRow": 0,
-                  "bottomRow": 480,
+                  "bottomRow": 470,
                   "parentRowSpace": 1,
                   "type": "CANVAS_WIDGET",
                   "canExtend": false,
@@ -194,15 +190,11 @@
                       "hideCard": false,
                       "animateLoading": true,
                       "overflow": "NONE",
-                      "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+                      "fontFamily": "Montserrat",
                       "parentColumnSpace": 11.96142578125,
                       "dynamicTriggerPathList": [],
                       "leftColumn": 1,
-                      "dynamicBindingPathList": [
-                        {
-                          "key": "fontFamily"
-                        }
-                      ],
+                      "dynamicBindingPathList": [],
                       "shouldTruncate": false,
                       "truncateButtonColor": "#FFC13D",
                       "text": "Order by: ",
@@ -266,6 +258,7 @@
                       "version": 3,
                       "totalRecordsCount": 0,
                       "isLoading": false,
+                      "onSearchTextChanged": "{{findQuery.run()}}",
                       "childStylesheet": {
                         "button": {
                           "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -308,7 +301,7 @@
                       "searchTags": [
                         "datagrid"
                       ],
-                      "bottomRow": 46,
+                      "bottomRow": 45,
                       "parentRowSpace": 10,
                       "defaultSelectedRow": "0",
                       "hideCard": false,
@@ -322,6 +315,9 @@
                         },
                         {
                           "key": "onSort"
+                        },
+                        {
+                          "key": "onSearchTextChanged"
                         }
                       ],
                       "primaryColumns": {
@@ -473,10 +469,11 @@
                       "label": "Data",
                       "searchKey": "",
                       "parentId": "lt8mc5sodu",
+                      "serverSidePaginationEnabled": true,
                       "renderMode": "CANVAS",
                       "horizontalAlignment": "LEFT",
                       "isVisibleSearch": true,
-                      "isVisiblePagination": true,
+                      "isVisiblePagination": false,
                       "cellBackground": "#f4f4f5",
                       "verticalAlignment": "CENTER"
                     },
@@ -524,6 +521,7 @@
                       ],
                       "labelPosition": "Left",
                       "options": "[\n  {\n    \"label\": \"UsersDoNotDisturb\",\n    \"value\": \"UsersDoNotDisturb\"\n  },\n  {\n    \"label\": \"CustomerEmailID\",\n    \"value\": \"CustomerEmailID\"\n  },\n   {\n    \"label\": \"CustomerName\",\n    \"value\": \"CustomerName\"\n  }, {\n    \"label\": \"CustomerID\",\n    \"value\": \"CustomerID\"\n  }\n]",
+                      "labelStyle": "",
                       "placeholderText": "Select option",
                       "isDisabled": false,
                       "key": "je8xjdyrpt",
@@ -540,7 +538,7 @@
                       "renderMode": "CANVAS",
                       "isLoading": false,
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-                      "onOptionChange": "{{findQuery.run()}}"
+                      "onOptionChange": "{{findQuery.run(() => findQuery.run(), () => {})}}"
                     },
                     {
                       "boxShadow": "none",
@@ -620,15 +618,11 @@
                       "hideCard": false,
                       "animateLoading": true,
                       "overflow": "NONE",
-                      "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+                      "fontFamily": "Montserrat",
                       "parentColumnSpace": 11.96142578125,
                       "dynamicTriggerPathList": [],
                       "leftColumn": 20,
-                      "dynamicBindingPathList": [
-                        {
-                          "key": "fontFamily"
-                        }
-                      ],
+                      "dynamicBindingPathList": [],
                       "shouldTruncate": false,
                       "truncateButtonColor": "#FFC13D",
                       "text": "Customer Data",
@@ -762,14 +756,15 @@
                   "widgetName": "Canvas3",
                   "displayName": "Canvas",
                   "topRow": 0,
-                  "bottomRow": 260,
+                  "bottomRow": 200,
                   "parentRowSpace": 1,
                   "type": "CANVAS_WIDGET",
                   "canExtend": true,
                   "hideCard": true,
                   "shouldScrollContents": false,
-                  "minHeight": 240,
+                  "minHeight": 210,
                   "parentColumnSpace": 1,
+                  "dynamicTriggerPathList": [],
                   "leftColumn": 0,
                   "dynamicBindingPathList": [
                     {
@@ -796,7 +791,7 @@
                       "overflow": "NONE",
                       "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
                       "dynamicTriggerPathList": [],
-                      "leftColumn": 1,
+                      "leftColumn": 14,
                       "dynamicBindingPathList": [
                         {
                           "key": "fontFamily"
@@ -810,7 +805,7 @@
                       "text": "Delete Row",
                       "key": "ttufv3eero",
                       "isDeprecated": false,
-                      "rightColumn": 41,
+                      "rightColumn": 50,
                       "textAlign": "LEFT",
                       "widgetId": "s4xbr77o04",
                       "isVisible": true,
@@ -834,13 +829,13 @@
                         "click",
                         "submit"
                       ],
-                      "topRow": 16,
-                      "bottomRow": 20,
+                      "topRow": 13,
+                      "bottomRow": 17,
                       "type": "BUTTON_WIDGET",
                       "hideCard": false,
                       "animateLoading": true,
                       "dynamicTriggerPathList": [],
-                      "leftColumn": 32,
+                      "leftColumn": 5,
                       "dynamicBindingPathList": [
                         {
                           "key": "borderRadius"
@@ -850,7 +845,7 @@
                       "isDisabled": false,
                       "key": "7nr9qq2asj",
                       "isDeprecated": false,
-                      "rightColumn": 48,
+                      "rightColumn": 30,
                       "isDefaultClickDisabled": true,
                       "widgetId": "h8cj7h3ikc",
                       "buttonStyle": "PRIMARY",
@@ -868,7 +863,7 @@
                       "boxShadow": "none",
                       "widgetName": "deleteModalConfirm",
                       "onClick": "{{deleteQuery.run(() => findQuery.run(() => closeModal('deleteModal')), () => {} )}}",
-                      "buttonColor": "#fbcfe8",
+                      "buttonColor": "#9d174d",
                       "dynamicPropertyPathList": [
                         {
                           "key": "onClick"
@@ -880,8 +875,8 @@
                         "click",
                         "submit"
                       ],
-                      "topRow": 16,
-                      "bottomRow": 20,
+                      "topRow": 13,
+                      "bottomRow": 17,
                       "type": "BUTTON_WIDGET",
                       "hideCard": false,
                       "animateLoading": true,
@@ -890,7 +885,7 @@
                           "key": "onClick"
                         }
                       ],
-                      "leftColumn": 48,
+                      "leftColumn": 33,
                       "dynamicBindingPathList": [
                         {
                           "key": "borderRadius"
@@ -900,7 +895,7 @@
                       "isDisabled": false,
                       "key": "7nr9qq2asj",
                       "isDeprecated": false,
-                      "rightColumn": 64,
+                      "rightColumn": 58,
                       "isDefaultClickDisabled": true,
                       "widgetId": "1nlqa3l6lh",
                       "buttonStyle": "PRIMARY_BUTTON",
@@ -922,8 +917,8 @@
                         "typography",
                         "paragraph"
                       ],
-                      "topRow": 7,
-                      "bottomRow": 13,
+                      "topRow": 6,
+                      "bottomRow": 12,
                       "parentRowSpace": 10,
                       "type": "TEXT_WIDGET",
                       "hideCard": false,
@@ -932,7 +927,7 @@
                       "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
                       "parentColumnSpace": 6.9375,
                       "dynamicTriggerPathList": [],
-                      "leftColumn": 2,
+                      "leftColumn": 5,
                       "dynamicBindingPathList": [
                         {
                           "key": "fontFamily"
@@ -946,7 +941,7 @@
                       "text": "Are you sure you want to delete?",
                       "key": "ttufv3eero",
                       "isDeprecated": false,
-                      "rightColumn": 46,
+                      "rightColumn": 63,
                       "textAlign": "LEFT",
                       "widgetId": "87vm6rqfhg",
                       "isVisible": true,
@@ -976,9 +971,10 @@
                 }
               ],
               "key": "a3s632fdir",
-              "height": 240,
+              "height": 210,
               "isDeprecated": false,
               "rightColumn": 24,
+              "backgroundColor": "#fee2e2",
               "detachFromLayout": true,
               "widgetId": "82wah8it1b",
               "canOutsideClickClose": true,
@@ -989,7 +985,7 @@
               "isLoading": false,
               "onClose": "",
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-              "width": 308
+              "width": 304
             },
             {
               "boxShadow": "none",
@@ -1329,6 +1325,7 @@
                       "widgetName": "InputCustID",
                       "displayName": "Input",
                       "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
+                      "onSubmit": "{{clearInterval()}}",
                       "searchTags": [
                         "form",
                         "text input",
@@ -1344,7 +1341,11 @@
                       "hideCard": false,
                       "animateLoading": true,
                       "parentColumnSpace": 8.9375,
-                      "dynamicTriggerPathList": [],
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onSubmit"
+                        }
+                      ],
                       "resetOnSubmit": true,
                       "leftColumn": 0,
                       "dynamicBindingPathList": [
@@ -1622,21 +1623,18 @@
                         "typography",
                         "paragraph"
                       ],
-                      "topRow": 1,
-                      "bottomRow": 7,
+                      "topRow": 2,
+                      "bottomRow": 9,
                       "parentRowSpace": 10,
                       "type": "TEXT_WIDGET",
                       "hideCard": false,
                       "animateLoading": true,
                       "overflow": "NONE",
-                      "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+                      "fontFamily": "Montserrat",
                       "parentColumnSpace": 4.7412109375,
                       "dynamicTriggerPathList": [],
-                      "leftColumn": 9,
+                      "leftColumn": 3,
                       "dynamicBindingPathList": [
-                        {
-                          "key": "fontFamily"
-                        },
                         {
                           "key": "borderRadius"
                         }
@@ -1646,7 +1644,7 @@
                       "text": "Update Selected Row",
                       "key": "o9r06dmfmw",
                       "isDeprecated": false,
-                      "rightColumn": 63,
+                      "rightColumn": 64,
                       "textAlign": "LEFT",
                       "widgetId": "tefprrqb35",
                       "isVisible": true,
@@ -1670,8 +1668,8 @@
                         "number",
                         "textarea"
                       ],
-                      "topRow": 8,
-                      "bottomRow": 15,
+                      "topRow": 9,
+                      "bottomRow": 16,
                       "parentRowSpace": 10,
                       "labelWidth": 5,
                       "autoFocus": false,
@@ -1828,7 +1826,7 @@
               "key": "0yt6fn23p8",
               "backgroundColor": "#fecaca",
               "isDeprecated": false,
-              "rightColumn": 60,
+              "rightColumn": 58,
               "widgetId": "r8aidk9ksh",
               "containerStyle": "card",
               "isVisible": true,

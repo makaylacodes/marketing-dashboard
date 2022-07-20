@@ -3,6 +3,10 @@
     {
       "id": "Customer Data",
       "isDefault": true
+    },
+    {
+      "id": "Send Messages",
+      "isDefault": false
     }
   ],
   "viewMode": false,
